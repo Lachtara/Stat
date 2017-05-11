@@ -29,23 +29,22 @@ gamble <- function(k,kn,p,case) {
     }
 }
 
-k <- 100 #can be altered to 200
+k <- 200 #can be altered to 200
 
 ps <- c(18/37,0.5,0.75)
-cases <- c(0,1,2,3)
 
 for(i in ps) {
     print("Ergebnis:")
     print(paste("p=",i,sep=""))
-    for(j in 1:4) {
+    for(j in 0:3) {
     	count <- 0
     	times <- 1000 #make smaller for quicker calculation
     	#count the number of times we win with given parameters
     	for(l in 1:times) {
-    	    if(gamble(k,50,i,cases[j])) count <- count+1
+    	    if(gamble(k,50,i,j)) count <- count+1
     	}
     	#relative frequency of winning
     	h <- count/times
-    	print(paste("Strategie ",j,": ",h,sep=""))
+    	print(paste("Strategie ",j+1,": ",h,sep=""))
     }
 }
