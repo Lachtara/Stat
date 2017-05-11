@@ -38,14 +38,14 @@ for(i in ps) {
     print("Ergebnis:")
     print(paste("p=",i,sep=""))
     for(j in 1:4) {
-	count <- 0
-	times <- 1000 #make smaller for quicker calculation
-	#count the number of times we win with given parameters
-	for(l in 1:times) {
-	    if(gamble(k,50,i,cases[j])) count <- count+1
-	}
-	#relative frequency of winning
-	h <- count/times
-	print(paste("Strategie ",j,": ",h,sep=""))
+    	count <- 0
+    	times <- 1000 #make smaller for quicker calculation
+    	#count the number of times we win with given parameters
+    	for(l in 1:times) {
+    	    if(gamble(k,50,i,cases[j])) count <- count+1
+    	}
+    	#relative frequency of winning
+    	h <- count/times
+    	print(paste("Strategie ",j,": ",h,sep=""))
     }
 }
